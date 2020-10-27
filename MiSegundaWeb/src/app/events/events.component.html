@@ -1,1 +1,27 @@
-<p>events works!</p>
+<section class="gallery-block cards-gallery">
+  <div class="container">
+      <div class="heading">
+        <h2>EVENTOS DISPONIBLES</h2>
+      </div>
+      <div class="row">
+
+          <div class="col-md-6 col-lg-4" *ngFor="let event of events">
+              <div class="card border-0 transform-on-hover">
+                <a class="lightbox">
+                  <img src="{{event.imgEv}}" alt="Card Image" class="card-img-top">
+                </a>
+                  <div class="card-body">
+                      <h6><a href="#">{{event.tituloEv}}</a></h6>
+                      <p class="text-muted card-text">{{event.descripEv}}</p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+</script>
+
