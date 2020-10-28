@@ -20,6 +20,63 @@
       </div>
   </div>
 </section>
+
+<div class="main-container">
+  <h2>¿Que accion desea realizar?</h2>
+  <div class="radio-buttons">
+      <label class="custom-radio">
+          <input type="radio" name="radio" value="add" (click)="elegirAccion($event)">
+          <span class="radio-btn"><i class="fas fa-check"></i>
+              <div class="options-icon">
+                <i class="fas fa-plus"></i>
+                  <h3>Añadir Evento</h3>
+              </div>
+          </span>
+      </label>
+      <label class="custom-radio">
+          <input type="radio" name="radio" value="edit" (click)="elegirAccion($event)">
+          <span class="radio-btn"><i class="fas fa-check"></i>
+              <div class="options-icon">
+                  <i class="fas fa-edit"></i>
+                  <h3>Editar Evento</h3>
+              </div>
+          </span>
+      </label>
+      <label class="custom-radio">
+          <input type="radio" name="radio" value="delete" (click)="elegirAccion($event)">
+          <span class="radio-btn"><i class="fas fa-check"></i>
+              <div class="options-icon">
+                 <i class="fas fa-trash"></i>
+                  <h3>Eliminar Evento</h3>
+              </div>
+          </span>
+      </label>
+  </div>
+</div>
+
+<div class="container-add">
+  <h1>{{accion}}</h1>
+  <form class="cf">
+    <div class="half left cf">
+      <input type="text" id="input-name" #evento placeholder="Evento">
+      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
+      <input type="email" id="input-email" #email placeholder="Email">
+    </div>
+    <div class="half right cf">
+      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
+    </div>
+    <input type="submit" value="Submit" id="input-submit">
+  </form>
+</div>
+
+<div class="container-edit">
+
+</div>
+
+<div class="container-delete">
+
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script>
     baguetteBox.run('.cards-gallery', { animation: 'slideIn'});

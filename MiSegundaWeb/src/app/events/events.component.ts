@@ -9,6 +9,7 @@ import { EventGallery } from '../models/event-gallery';
 export class EventsComponent implements OnInit {
 
   events: EventGallery[] = [];
+  accion: String;
 
   constructor() { }
 
@@ -20,6 +21,19 @@ export class EventsComponent implements OnInit {
     this.events.push(new EventGallery('Mount Fuji', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta odit aliquam neque? Dignissimos, blanditiis.', 'assets/img-events/event4.jpg'));
     this.events.push(new EventGallery('Cascade Lauzon', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta odit aliquam neque? Dignissimos, blanditiis.', 'assets/img-events/event5.jpg'));
 
+  }
+
+  elegirAccion(event) {
+    console.log(event.target.value);
+    if(event.target.value == "add") {
+      this.accion = "AÑADIR EVENTO";
+    } else if(event.target.value == "edit") {
+      this.accion = "EDITAR EVENTO";
+    } else if (event.target.value == "delete") {
+      this.accion = "ELIMINAR EVENTO";
+    } else {
+      this.accion = "";
+    }
   }
 
 }
