@@ -13,6 +13,8 @@
                   <div class="card-body">
                       <h6><a href="#">{{event.tituloEv}}</a></h6>
                       <p class="text-muted card-text">{{event.descripEv}}</p>
+                      <p class="text-muted card-text location">{{event.ubicacionEv}}</p>
+                      <small class="text-muted card-text autor"> Autor: {{event.emailAutor}}</small>
                   </div>
               </div>
           </div>
@@ -54,7 +56,7 @@
   </div>
 </div>
 
-<div class="container-add">
+<div class="container-add" *ngIf="container === 'add'">
   <h1>{{accion}}</h1>
   <form class="cf">
     <div class="half left cf">
@@ -65,16 +67,31 @@
     <div class="half right cf">
       <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
     </div>
-    <input type="submit" value="Submit" id="input-submit">
+    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value)" value="Añadir" id="input-submit">
   </form>
 </div>
 
-<div class="container-edit">
-
+<div class="container-edit" *ngIf="container === 'edit'">
+  <form class="cf">
+    <div class="half left cf">
+      <input type="text" id="input-name" #evento placeholder="Evento2">
+      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación2">
+      <input type="email" id="input-email" #email placeholder="Email2">
+    </div>
+    <div class="half right cf">
+      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción2"></textarea>
+    </div>
+    <input type="button" value="Añadir2" id="input-submit">
+  </form>
 </div>
 
-<div class="container-delete">
-
+<div class="container-delete" *ngIf="container === 'delete'">
+  <form class="cf">
+    <div class="half left cf">
+      <input type="text" id="input-name" #evento placeholder="Evento3">
+    </div>
+    <input type="button" value="Añadir3" id="input-submit">
+  </form>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
