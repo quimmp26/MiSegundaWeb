@@ -11,7 +11,7 @@ export class EventsComponent implements OnInit {
   events: EventGallery[] = [];
   accion: String;
 
-  public container: string = "add";
+  public container: string;
 
   public evento: string;
   public ubicacion: string;
@@ -46,13 +46,13 @@ export class EventsComponent implements OnInit {
     }
   }
 
-  enviarDatosAdd(event, ubi, email, descrip) {
-    this.evento = event;
-    this.ubicacion = ubi;
-    this.email = email;
-    this.descripcion = descrip;
+  enviarDatosAdd(event, ubi, email, descrip, img, check) {
 
-    this.events.push(new EventGallery(this.evento, this.descripcion, 'assets/img-events/event1.jpg', this.ubicacion, this.email));
+    console.log(check);
+    if((event && ubi && email && descrip)){
+      this.events.push(new EventGallery(event, ubi, email, descrip, img));
+    }
+
   }
 
 }

@@ -5,8 +5,6 @@ export class EventGallery {
     public descripEv: string,
     public imgEv: string,
     public ubicacionEv: string,
-    public emailAutor: string
-  ){
-
-  }
+    public emailAutor: string,
+  ){}
 }

@@ -63,11 +63,13 @@
       <input type="text" id="input-name" #evento placeholder="Evento">
       <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
       <input type="email" id="input-email" #email placeholder="Email">
+      <label><input type="checkbox" id="input-check" #check>Aceptar Condiciones</label>
     </div>
     <div class="half right cf">
       <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
+      <input type="text" id="input-imagen" #imagen placeholder="Imagen">
     </div>
-    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value)" value="Añadir" id="input-submit">
+    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value, imagen.value, check.value)" value="Añadir" id="input-submit">
   </form>
 </div>
 
@@ -81,7 +83,7 @@
     <div class="half right cf">
       <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción2"></textarea>
     </div>
-    <input type="button" value="Añadir2" id="input-submit">
+    <input type="button" value="Editar" id="input-submit">
   </form>
 </div>
 
@@ -90,7 +92,7 @@
     <div class="half left cf">
       <input type="text" id="input-name" #evento placeholder="Evento3">
     </div>
-    <input type="button" value="Añadir3" id="input-submit">
+    <input type="button" value="Eliminar" id="input-submit">
   </form>
 </div>
 
