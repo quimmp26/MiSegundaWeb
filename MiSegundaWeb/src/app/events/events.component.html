@@ -78,6 +78,7 @@
 </div>
 
 <div class="container-edit" *ngIf="container === 'edit'">
+  <h1>{{accion}}</h1>
   <form class="cf">
     <div class="half left cf">
       <input type="text" id="input-name" #evento placeholder="Evento">
@@ -92,6 +93,7 @@
 </div>
 
 <div class="container-delete" *ngIf="container === 'delete'">
+  <h1>{{accion}}</h1>
   <form class="cf">
     <div class="half left cf">
       <input type="text" id="input-name" #evento placeholder="Evento">
