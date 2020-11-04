@@ -3,7 +3,7 @@
       <div class="heading">
         <h2>EVENTOS DISPONIBLES</h2>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="events.length != 0">
 
           <div class="col-md-6 col-lg-4" *ngFor="let event of events">
               <div class="card border-0 transform-on-hover">
@@ -19,6 +19,9 @@
               </div>
           </div>
 
+      </div>
+      <div class="row" *ngIf="events.length == 0" class="no-events">
+        <p>No hay eventos creados!</p>
       </div>
   </div>
 </section>
@@ -60,7 +63,7 @@
   <h1>{{accion}}</h1>
   <form class="cf">
     <div class="half left cf">
-      <input type="text" id="input-name" #evento placeholder="Evento">
+      <input type="text" id="input-name" #evento placeholder="Evento" >
       <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
       <input type="email" id="input-email" #email placeholder="Email">
       <label><input type="checkbox" id="input-check" #check>Aceptar Condiciones</label>
@@ -69,19 +72,20 @@
       <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
       <input type="text" id="input-imagen" #imagen placeholder="Imagen">
     </div>
-    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value, imagen.value, check.value)" value="Añadir" id="input-submit">
+    <p class="mensajeError" style="color: red;">{{mensajeError}}</p>
+    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value, imagen.value, check.checked)" value="Añadir" id="input-submit">
   </form>
 </div>
 
 <div class="container-edit" *ngIf="container === 'edit'">
   <form class="cf">
     <div class="half left cf">
-      <input type="text" id="input-name" #evento placeholder="Evento2">
-      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación2">
-      <input type="email" id="input-email" #email placeholder="Email2">
+      <input type="text" id="input-name" #evento placeholder="Evento">
+      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
+      <input type="email" id="input-email" #email placeholder="Email">
     </div>
     <div class="half right cf">
-      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción2"></textarea>
+      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
     </div>
     <input type="button" value="Editar" id="input-submit">
   </form>
@@ -90,9 +94,9 @@
 <div class="container-delete" *ngIf="container === 'delete'">
   <form class="cf">
     <div class="half left cf">
-      <input type="text" id="input-name" #evento placeholder="Evento3">
+      <input type="text" id="input-name" #evento placeholder="Evento">
     </div>
-    <input type="button" value="Eliminar" id="input-submit">
+    <input type="button" value="Eliminar" id="input-submit" (click)="eliminarEvento(evento.value)">
   </form>
 </div>
 

@@ -7,6 +7,8 @@ import { IniciComponent } from './inici/inici.component';
 import { EventsComponent } from './events/events.component';
 import { NosaltresComponent } from './nosaltres/nosaltres.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AltaEventComponent } from './alta-event/alta-event.component';
+import { ModificarEventComponent } from './modificar-event/modificar-event.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     IniciComponent,
     EventsComponent,
     NosaltresComponent,
-    NavbarComponent
+    NavbarComponent,
+    AltaEventComponent,
+    ModificarEventComponent
   ],
   imports: [
     BrowserModule,

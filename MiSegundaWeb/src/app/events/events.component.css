@@ -1,3 +1,4 @@
+
 .gallery-block{
 	padding-bottom: 60px;
 	padding-top: 60px;
@@ -59,6 +60,14 @@
 .card-img-top {
   max-height: 400px;
 }
+
+.no-events{
+  text-align: center;
+  font-weight: bold;
+  display: block;
+
+}
+
 
 
 /* Radio Buttons Options */
