@@ -5,7 +5,7 @@
       </div>
       <div class="row" *ngIf="events.length != 0">
 
-          <div class="col-md-6 col-lg-4" *ngFor="let event of events">
+          <div class="col-md-6 col-lg-4" *ngFor="let event of events" (click)="editarEvento(event)">
               <div class="card border-0 transform-on-hover">
                 <a class="lightbox">
                   <img src="{{event.imgEv}}" alt="Card Image" class="card-img-top">
@@ -59,38 +59,9 @@
   </div>
 </div>
 
-<div class="container-add" *ngIf="container === 'add'">
-  <h1>{{accion}}</h1>
-  <form class="cf">
-    <div class="half left cf">
-      <input type="text" id="input-name" #evento placeholder="Evento" >
-      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
-      <input type="email" id="input-email" #email placeholder="Email">
-      <label><input type="checkbox" id="input-check" #check>Aceptar Condiciones</label>
-    </div>
-    <div class="half right cf">
-      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
-      <input type="text" id="input-imagen" #imagen placeholder="Imagen">
-    </div>
-    <p class="mensajeError" style="color: red;">{{mensajeError}}</p>
-    <input type="button" (click)="enviarDatosAdd(evento.value, ubicacion.value, email.value, descrip.value, imagen.value, check.checked)" value="Añadir" id="input-submit">
-  </form>
-</div>
+<app-alta-event *ngIf="(container) === 'add'" (emitirDatos)="anadirEvento($event)"></app-alta-event>
 
-<div class="container-edit" *ngIf="container === 'edit'">
-  <h1>{{accion}}</h1>
-  <form class="cf">
-    <div class="half left cf">
-      <input type="text" id="input-name" #evento placeholder="Evento">
-      <input type="text" id="input-subject" #ubicacion placeholder="Ubicación">
-      <input type="email" id="input-email" #email placeholder="Email">
-    </div>
-    <div class="half right cf">
-      <textarea name="message" type="text" #descrip id="input-message" placeholder="Descripción"></textarea>
-    </div>
-    <input type="button" value="Editar" id="input-submit">
-  </form>
-</div>
+<app-modificar-event *ngIf="(container) === 'edit'" [eventsIn]="eventModificar" (emitirDatos)="editEvento($event)"></app-modificar-event>
 
 <div class="container-delete" *ngIf="container === 'delete'">
   <h1>{{accion}}</h1>
