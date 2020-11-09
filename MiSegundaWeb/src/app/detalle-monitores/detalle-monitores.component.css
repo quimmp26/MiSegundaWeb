@@ -1,0 +1,8 @@
+.card {
+  display: inline;
+}
+
+
+.card img{
+  max-width: 30%;
+}

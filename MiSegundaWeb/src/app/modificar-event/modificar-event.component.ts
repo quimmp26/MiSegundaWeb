@@ -73,7 +73,7 @@ export class ModificarEventComponent implements OnInit {
 
     if(this.compEvent && this.compCheck && this.compDescrip && this.compEmail){
 
-      this.emitirDatos.emit({idEv: Math.round(Math.random()*100),tituloEv: this.evento, descripEv: this.descripcion, imgEv: this.imagen, ubicacionEv: this.ubicacion, emailAutor: this.email});
+      this.emitirDatos.emit({idEv: this.eventsIn.idEv, tituloEv: this.evento, descripEv: this.descripcion, imgEv: this.imagen, ubicacionEv: this.ubicacion, emailAutor: this.email});
 
     }
   }

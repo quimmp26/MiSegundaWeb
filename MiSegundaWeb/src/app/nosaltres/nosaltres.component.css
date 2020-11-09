@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Merriweather", sans-serif;
+}
+
+
+.col{
+  text-align: center;
+  padding: 40px;
+
+}

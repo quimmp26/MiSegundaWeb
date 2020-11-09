@@ -1,1 +1,8 @@
-<p>nosaltres works!</p>
+<div class="col">
+  <h3>MONITORES</h3>
+  <app-lista-monitores (informarEvent)="cambiarMonitorSeleccionado($event)"></app-lista-monitores>
+</div>
+
+<div class="col">
+  <app-detalle-monitores [monitor]="monitorSeleccionado"></app-detalle-monitores>
+</div>

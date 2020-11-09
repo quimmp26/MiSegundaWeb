@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Monitor } from '../models/monitor';
 
 @Component({
   selector: 'app-nosaltres',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NosaltresComponent implements OnInit {
 
+  monitorSeleccionado: Monitor;
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
+
+
+
+  cambiarMonitorSeleccionado(monitor) {
+    this.monitorSeleccionado = monitor;
+  }
+
+
 
 }

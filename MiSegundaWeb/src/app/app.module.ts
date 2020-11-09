@@ -9,6 +9,9 @@ import { NosaltresComponent } from './nosaltres/nosaltres.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AltaEventComponent } from './alta-event/alta-event.component';
 import { ModificarEventComponent } from './modificar-event/modificar-event.component';
+import { ListaMonitoresComponent } from './lista-monitores/lista-monitores.component';
+import { DetalleMonitoresComponent } from './detalle-monitores/detalle-monitores.component';
+import { ElementoMonitorComponent } from './elemento-monitor/elemento-monitor.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ModificarEventComponent } from './modificar-event/modificar-event.compo
     NosaltresComponent,
     NavbarComponent,
     AltaEventComponent,
-    ModificarEventComponent
+    ModificarEventComponent,
+    ListaMonitoresComponent,
+    DetalleMonitoresComponent,
+    ElementoMonitorComponent
   ],
   imports: [
     BrowserModule,

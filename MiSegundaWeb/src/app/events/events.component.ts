@@ -71,12 +71,14 @@ export class EventsComponent implements OnInit {
     for(var i=0; i<this.events.length; i++){
 
      console.log(this.events[i].idEv);
+     if(this.events[i].idEv == ev.idEv){
+      this.events[i].tituloEv = ev.tituloEv;
+      this.events[i].descripEv = ev.descripEv;
+      this.events[i].imgEv = ev.imgEv;
+      this.events[i].ubicacionEv = ev.ubicacionEv;
+      this.events[i].emailAutor = ev.emailAutor;
 
-        // this.events[i].tituloEv = ev.tituloEv;
-        // this.events[i].descripEv = ev.descripEv;
-        // this.events[i].imgEv = ev.imgEv;
-        // this.events[i].ubicacionEv = ev.ubicacionEv;
-        // this.events[i].emailAutor = ev.emailAutor;
+     }
 
     }
     console.log(ev.idEv);
