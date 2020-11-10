@@ -1,8 +1,11 @@
-<div class="card">
-  <img class="card-img-top" src="{{monitor.img}}">
-  <div class="card-body">
-    <h5 class="card-title">{{monitor.nombre}} {{monitor.apellido}}</h5>
-    <p class="card-text">{{monitor.cargo}}</p>
-    <p class="card-title">{{monitor.edad}}</p>
+<body>
+  <div class="card" style="width:400px" *ngIf="monitor.img !== ''">
+    <img class="card-img-top" src="{{monitor.img}}" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{monitor.nombre}} {{monitor.apellido}}</h4>
+      <p class="card-text">{{monitor.cargo}}</p>
+      <p class="card-text">{{monitor.edad}} años</p>
+    </div>
   </div>
-</div>
+</body>
+
