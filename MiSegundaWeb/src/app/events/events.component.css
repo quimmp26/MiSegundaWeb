@@ -1,3 +1,4 @@
+/* Cards Gallery*/
 
 .gallery-block{
 	padding-bottom: 60px;
@@ -162,7 +163,7 @@
   transform: translateX(-50%) scale(1);
 }
 
-/* Formulario Add Evento */
+/* Formularios Acciones */
 
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 *,

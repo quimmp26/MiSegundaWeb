@@ -1,3 +1,4 @@
+<!-- Seccion eventos -->
 <section class="gallery-block cards-gallery">
   <div class="container">
       <div class="heading">
@@ -11,7 +12,7 @@
                   <img src="{{event.imgEv}}" alt="Card Image" class="card-img-top">
                 </a>
                   <div class="card-body">
-                      <h6><a href="#">{{event.tituloEv}}</a></h6>
+                      <h6><a>{{event.tituloEv}}</a></h6>
                       <p class="text-muted card-text">{{event.descripEv}}</p>
                       <p class="text-muted card-text location">{{event.ubicacionEv}}</p>
                       <small class="text-muted card-text autor"> Autor: {{event.emailAutor}}</small>
@@ -26,6 +27,7 @@
   </div>
 </section>
 
+<!-- Div acciones eventos -->
 <div class="main-container">
   <h2>¿Que accion desea realizar?</h2>
   <div class="radio-buttons">
@@ -59,10 +61,13 @@
   </div>
 </div>
 
+<!-- Component Formulario Alta Evento-->
 <app-alta-event *ngIf="(container) === 'add'" (emitirDatos)="anadirEvento($event)"></app-alta-event>
 
+<!-- Component Formulario Modificar Evento -->
 <app-modificar-event *ngIf="(container) === 'edit'" [eventsIn]="eventModificar" (emitirDatos)="editEvento($event)"></app-modificar-event>
 
+<!-- Component Formulario Eliminar Evento Output-->
 <div class="container-delete" *ngIf="container === 'delete'">
   <h1>{{accion}}</h1>
   <form class="cf">
@@ -73,6 +78,7 @@
   </form>
 </div>
 
+<!-- Scripts animacion galeria targetas-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script>
     baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
